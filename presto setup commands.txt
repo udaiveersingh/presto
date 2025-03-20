@@ -1,0 +1,52 @@
+PS C:\Users\LENOVO\Documents> git clone https://github.com/nasaharvest/presto
+cd .\presto\
+pip install virtualenv
+virtualenv venv
+.\venv\Scripts\activate
+pip install -e .
+python --version
+pip install --upgrade pip setuptools wheel
+pip install --only-binary=:all: h5py pandas
+code .
+pip install xarray rasterio rioxarray
+pip install pyproj scipy scikit-learn tqdm
+pip install torch
+pip install earthengine-api
+earthengine authenticate
+pip install geopandas
+pip install webdataset hurry hurry.filesize openmapflow einops
+pip install utils
+
+from presto import utils
+print(utils.data_dir)
+
+import presto.utils
+treesat_folder = utils.data_dir / "treesat"
+
+presto -> __init__.py
+from . import utils
+
+presto -> __main__.py
+# presto/__main__.py
+from presto import Presto
+# or call some main function from your package
+print("Presto package is running.")
+
+document\presto -> run command
+python -m presto
+
+RERUN:
+from presto import utils
+print(utils.data_dir)
+
+import presto.utils
+treesat_folder = utils.data_dir / "treesat"
+
+
+import rioxarray as rxr
+for filename in tqdm(filenames):
+       tif_file = rxr.open_rasterio(s2_data_60m / filename.strip())
+       # Get the CRS from the rioxarray accessor (as a pyproj CRS object)
+       crs = tif_file.rio.crs  
+       # Create a transformer from the file's CRS to EPSG:4326
+       transformer = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
