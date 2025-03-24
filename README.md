@@ -6,7 +6,7 @@ This code accompanies our paper, [Lightweight, Pre-trained Transformers for Remo
 ```bash
 python -m venv venv
 source venv/bin/activate
-pip install -e .
+pip install -r requirements.txt
 ```
 [`wandb`](https://pypi.org/project/wandb/) can additionally be installed for full functionality of the `train.py` script.
 
