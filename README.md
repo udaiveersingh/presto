@@ -8,6 +8,8 @@ python -m venv venv
 source venv/bin/activate
 pip install -e .
 ```
+Install other libraries from [`setup.py`]
+
 [`wandb`](https://pypi.org/project/wandb/) can additionally be installed for full functionality of the `train.py` script.
 
 ## Entrypoints
