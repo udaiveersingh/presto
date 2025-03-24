@@ -107,6 +107,7 @@ BANDS_GROUPS_IDX: OrderedDictType[str, List[int]] = OrderedDict(
     }
 )
 
+# Bands group idx for hyperspectral data
 
 class S1_S2_ERA5_SRTM(EEPipeline):
     item_shape = (NUM_TIMESTEPS, NUM_BANDS)
